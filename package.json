@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jw-react-pagination": "^1.0.7",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-paginating": "^1.1.0",
