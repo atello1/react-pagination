@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Client from "../Client/Client";
+import PaginationComponent from "../Pagination/Pagination";
 
 class Clients extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ key={index}
     name={client.name}
   />
 )}
-
+<PaginationComponent />
 
 </div>
 
