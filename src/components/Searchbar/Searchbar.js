@@ -34,26 +34,25 @@ class Searchbar extends Component {
   render() {
     return (
       <div className="searchBar">
-        <div className=" row">
-          <div className="col-sm-4">
-          <p class="label">Search by Exchange</p>
+        <div className="align-content-center justify-content-center row searchBarInner">
+          <div className="col-sm-12">
+            <h1>Our clients</h1>
+          </div>
+          <div className="col-md-4">
+            <p class="label">Search by Exchange</p>
 
-          <div class="searchArea">
-            <a onClick={this.handleSearch}>Submit</a>
-            <div class="inputDiv">
-              <input
-                id="inputExchange"
-                type="text"
-                onChange={e => this.updateStateFilters("exchange", e)}
-              />
+            <div class="searchArea">
+              <a onClick={this.handleSearch}>Submit</a>
+              <div class="inputDiv">
+                <input
+                  id="inputExchange"
+                  type="text"
+                  onChange={e => this.updateStateFilters("exchange", e)}
+                />
+              </div>
             </div>
           </div>
-
-
-
-
-          </div>
-          <div className="col-sm-4">
+          <div className="col-md-4">
             <p class="label">Search by Ticker</p>
 
             <div class="searchArea">
@@ -67,7 +66,7 @@ class Searchbar extends Component {
               </div>
             </div>
           </div>
-          <div className="col-sm-12">
+          <div className="col-md-12 text-center">
             <a className="seeAll" href="" onClick={this.clearFilters}>
               See all clients
             </a>

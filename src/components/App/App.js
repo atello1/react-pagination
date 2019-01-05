@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import logo from './logo.jpg';
+import logo from "./logo.jpg";
 import "./App.css";
 import Clients from "../Clients/Clients";
 import Searchbar from "../Searchbar/Searchbar";
-
-
-
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +11,6 @@ class App extends Component {
       clients: []
     };
     this.searchFilter = this.searchFilter.bind(this);
-
   }
 
   componentDidMount() {
@@ -26,8 +22,6 @@ class App extends Component {
         this.setState({ clients: response.data });
       });
   }
-
-
 
   searchFilter(searchTerm, filterType) {
     alert(`https://api.renmark.ir/companies?${filterType}=${searchTerm} `);
@@ -42,16 +36,15 @@ class App extends Component {
 
   render() {
     return (
-<div>
-<div className="header">
-<img src={logo} alt="hhh"/>
-</div>
-<Searchbar searchFilter={this.searchFilter} />
-      <div className="App container">
-
-        <Clients clients={this.state.clients} />
+      <div>
+        <div className="header">
+          <img src={logo} alt="" />
+        </div>
+        <Searchbar searchFilter={this.searchFilter} />
+        <div className="App container">
+          <Clients clients={this.state.clients} />
+        </div>
       </div>
-</div>
     );
   }
 }
