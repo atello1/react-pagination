@@ -6,21 +6,12 @@ class Clients extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      exampleItems: [],
       pageOfItems: []
     };
     this.onChangePage = this.onChangePage.bind(this);
   }
 
-  componentDidMount() {
-    fetch("https://api.renmark.ir/companies")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(response => {
-        this.setState({ exampleItems: response.data });
-      });
-  }
+
 
   onChangePage(pageOfItems) {
     // update state with new page of items
@@ -36,7 +27,7 @@ class Clients extends Component {
         </div>
         <div className="row">
           <Pagination
-            items={this.state.exampleItems}
+            items={this.props.clients}
             onChangePage={this.onChangePage}
           />
         </div>
