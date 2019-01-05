@@ -9,6 +9,7 @@ class Client extends Component {
 <img className="client__img" src={this.props.src} alt=""/>
 <p className="client__name">
 {this.props.name}
+
 </p>
 
 </div>
