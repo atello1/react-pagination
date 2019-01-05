@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Client from "../Client/Client";
 import Pagination from "jw-react-pagination";
 
-class exampleItems extends Component {
+class Clients extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,4 +45,4 @@ class exampleItems extends Component {
   }
 }
 
-export default exampleItems;
+export default Clients;
