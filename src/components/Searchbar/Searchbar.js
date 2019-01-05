@@ -9,6 +9,8 @@ class Searchbar extends Component {
     };
     this.updateStateFilters = this.updateStateFilters.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.clearFilters = this.clearFilters.bind(this);
+
   }
 
   updateStateFilters(filterType,e) {
@@ -22,12 +24,19 @@ class Searchbar extends Component {
     e.preventDefault();
     this.props.searchFilter(this.state.searchTerm, this.state.filterType);
   }
+
+  clearFilters(e) {
+    e.preventDefault();
+
+    this.props.searchFilter("", "");
+  }
+
   render() {
     return (
       <div className="searchBar row">
         <div className="col-sm-6">
           <p>Search by Exchange</p>
-          <input type="text" onChange={(e) => this.updateStateFilters("exchange", e)} />
+          <input id="inputExchange" type="text" onChange={(e) => this.updateStateFilters("exchange", e)} />
 
           <a href="" className="submit-exchange" onClick={this.handleSearch}>
             Submit
@@ -35,11 +44,14 @@ class Searchbar extends Component {
         </div>
         <div className="col-sm-6">
           <p>Search by Ticker</p>
-        <input type="text" onChange={(e) => this.updateStateFilters("ticker", e)} />
+        <input id="inputTicker" type="text" onChange={(e) => this.updateStateFilters("ticker", e)} />
           <a href="" className="submit-exchange" onClick={this.handleSearch}>
             Submit
           </a>
         </div>
+<div className="col-sm-12">
+<a href="" onClick={this.clearFilters}>See all</a>
+</div>
       </div>
     );
   }

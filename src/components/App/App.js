@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 import Clients from "../Clients/Clients";
 import Searchbar from "../Searchbar/Searchbar";
 
@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       clients: []
     };
-this.searchFilter =this.searchFilter.bind(this);
+    this.searchFilter = this.searchFilter.bind(this);
+    
   }
 
   componentDidMount() {
@@ -24,21 +25,23 @@ this.searchFilter =this.searchFilter.bind(this);
   }
 
 
-searchFilter(searchTerm,filterType){
-alert(`https://api.renmark.ir/companies?${filterType}=${searchTerm} `)
-fetch(`https://api.renmark.ir/companies?${filterType}=${searchTerm}`)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(response => {
-    this.setState({ clients: response.data });
-  });
-}
+
+  searchFilter(searchTerm, filterType) {
+    alert(`https://api.renmark.ir/companies?${filterType}=${searchTerm} `);
+    fetch(`https://api.renmark.ir/companies?${filterType}=${searchTerm}`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({ clients: response.data });
+      });
+  }
+
   render() {
     return (
       <div className="App container">
-        <Searchbar searchFilter={this.searchFilter}/>
-        <Clients clients={this.state.clients}/>
+        <Searchbar searchFilter={this.searchFilter} />
+        <Clients clients={this.state.clients} />
       </div>
     );
   }
