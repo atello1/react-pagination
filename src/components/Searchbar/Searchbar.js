@@ -11,10 +11,10 @@ class Searchbar extends Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  updateStateFilters(e) {
+  updateStateFilters(filterType,e) {
     this.setState({
       searchTerm: e.target.value,
-      filterType: "exchange"
+      filterType: filterType
     });
   }
 
@@ -27,14 +27,15 @@ class Searchbar extends Component {
       <div className="searchBar row">
         <div className="col-sm-6">
           <p>Search by Exchange</p>
-          <input type="text" onChange={this.updateStateFilters} />
+          <input type="text" onChange={(e) => this.updateStateFilters("exchange", e)} />
+
           <a href="" className="submit-exchange" onClick={this.handleSearch}>
             Submit
           </a>
         </div>
         <div className="col-sm-6">
           <p>Search by Ticker</p>
-          <input type="text" onChange={this.updateStateFilters} />
+        <input type="text" onChange={(e) => this.updateStateFilters("ticker", e)} />
           <a href="" className="submit-exchange" onClick={this.handleSearch}>
             Submit
           </a>
