@@ -22,7 +22,7 @@ class Clients extends Component {
       <div>
         <div className="row">
           {this.state.pageOfItems.map((client, index) => (
-            <Client key={index} src={client.logo} name={client.name} />
+            <Client key={index} src={client.logo} name={client.name} filterTerm={client.tickers[0].exchange}/>
           ))}
         </div>
         <div className="row">
