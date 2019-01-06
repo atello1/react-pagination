@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Client from "../Client/Client";
+import "./Clients.css";
 import Pagination from "jw-react-pagination";
 
 class Clients extends Component {
@@ -16,27 +17,40 @@ class Clients extends Component {
     this.setState({ pageOfItems: pageOfItems });
   }
 
-
   render() {
     return (
       <div>
         <div className="row">
-          <Pagination
-            items={this.props.clients}
-            onChangePage={this.onChangePage}
-          />
+          {this.props.clients ? (
+            <Pagination
+              items={this.props.clients}
+              onChangePage={this.onChangePage}
+              pageSize={10}
+            />
+          ) : (
+            ""
+          )}
         </div>
         <div className="row">
           {this.state.pageOfItems.map((client, index) => (
-            <Client key={index} src={client.logo} name={client.name} id={client.id}/>
+            <Client
+              key={index}
+              src={client.logo}
+              name={client.name}
+              id={client.id}
+            />
           ))}
         </div>
         <div className="row">
-          <Pagination
-            items={this.props.clients}
-            onChangePage={this.onChangePage}
-            pageSize={10}
-          />
+          {this.props.clients ? (
+            <Pagination
+              items={this.props.clients}
+              onChangePage={this.onChangePage}
+              pageSize={10}
+            />
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );
