@@ -11,6 +11,7 @@ class Searchbar extends Component {
     this.updateStateFilters = this.updateStateFilters.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.clearFilters = this.clearFilters.bind(this);
+    this.handleOnfocus = this.handleOnfocus.bind(this);
   }
 
   updateStateFilters(filterType, e) {
@@ -22,8 +23,6 @@ class Searchbar extends Component {
 
   handleSearch(e) {
     e.preventDefault();
-//reset prev
-//empty
     this.props.searchFilter(this.state.searchTerm, this.state.filterType);
   }
 
@@ -31,6 +30,16 @@ class Searchbar extends Component {
     e.preventDefault();
     this.props.searchFilter("", "");
   }
+
+handleOnfocus(e){
+document.getElementById('inputExchange').value="";
+document.getElementById('inputTicker').value="";
+  this.setState({
+    searchTerm: "",
+    filterType: ""
+  });
+
+}
 
   render() {
     return (
@@ -48,6 +57,7 @@ class Searchbar extends Component {
                 <input
                   id="inputExchange"
                   type="text"
+                  onFocus={this.handleOnfocus}
                   onChange={e => this.updateStateFilters("exchange", e)}
                 />
               </div>
@@ -62,6 +72,7 @@ class Searchbar extends Component {
                 <input
                   id="inputTicker"
                   type="text"
+                  onFocus={this.handleOnfocus}
                   onChange={e => this.updateStateFilters("ticker", e)}
                 />
               </div>
