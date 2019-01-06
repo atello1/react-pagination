@@ -16,6 +16,7 @@ class Clients extends Component {
     this.setState({ pageOfItems: pageOfItems });
   }
 
+
   render() {
     return (
       <div>
@@ -27,7 +28,7 @@ class Clients extends Component {
         </div>
         <div className="row">
           {this.state.pageOfItems.map((client, index) => (
-            <Client key={index} src={client.logo} name={client.name} />
+            <Client key={index} src={client.logo} name={client.name} id={client.id}/>
           ))}
         </div>
         <div className="row">
