@@ -22,12 +22,13 @@ class Searchbar extends Component {
 
   handleSearch(e) {
     e.preventDefault();
+//reset prev
+//empty
     this.props.searchFilter(this.state.searchTerm, this.state.filterType);
   }
 
   clearFilters(e) {
     e.preventDefault();
-
     this.props.searchFilter("", "");
   }
 

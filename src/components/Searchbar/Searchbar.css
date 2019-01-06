@@ -19,6 +19,7 @@
   margin-top: 0px;
   margin-bottom: 40px;
 }
+
 .searchBar * {
   color: #fff;
 }
@@ -69,7 +70,6 @@ a.seeAll {
   color: #ded5d5;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
-
   max-width: 400px;
   display: inline-block;
   font-size: 19px;

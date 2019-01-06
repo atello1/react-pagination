@@ -19,21 +19,22 @@ class Clients extends Component {
   render() {
     return (
       <div>
-      <div className="row">
-        <Pagination
-          items={this.props.clients}
-          onChangePage={this.onChangePage}
-        />
-      </div>
+        <div className="row">
+          <Pagination
+            items={this.props.clients}
+            onChangePage={this.onChangePage}
+          />
+        </div>
         <div className="row">
           {this.state.pageOfItems.map((client, index) => (
-            <Client key={index} src={client.logo} name={client.name} filterTerm={client.tickers[0].exchange}/>
+            <Client key={index} src={client.logo} name={client.name} />
           ))}
         </div>
         <div className="row">
           <Pagination
             items={this.props.clients}
             onChangePage={this.onChangePage}
+            pageSize={10}
           />
         </div>
       </div>
