@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   searchFilter(searchTerm, filterType) {
-    alert(`https://api.renmark.ir/companies?${filterType}=${searchTerm} `);
+    //alert(`https://api.renmark.ir/companies?${filterType}=${searchTerm} `);
     fetch(`https://api.renmark.ir/companies?${filterType}=${searchTerm}`)
       .then(function(response) {
         return response.json();

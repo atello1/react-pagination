@@ -31,15 +31,14 @@ class Searchbar extends Component {
     this.props.searchFilter("", "");
   }
 
-handleOnfocus(e){
-document.getElementById('inputExchange').value="";
-document.getElementById('inputTicker').value="";
-  this.setState({
-    searchTerm: "",
-    filterType: ""
-  });
-
-}
+  handleOnfocus(e) {
+    document.getElementById("inputExchange").value = "";
+    document.getElementById("inputTicker").value = "";
+    this.setState({
+      searchTerm: "",
+      filterType: ""
+    });
+  }
 
   render() {
     return (
